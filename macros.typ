@@ -1,9 +1,45 @@
 // macros.typ
 //
-#import "style.typ": colors,setup
-#import "./boxes/icon.typ": *
-#import "./boxes/resource.typ": *
+#import "style.typ": colors, setup
+#import "boxes/icon.typ": *
+#import "boxes/resource.typ": *
 
+//#let semantic-style = "box"
+#let semantic-style = "banner"
+//
+
+#let info(body) = {
+  if semantic-style == "banner" {
+    info-banner-box(body)
+  } else {
+    info-box(body)
+  }
+}
+
+#let tip(body) = {
+  if semantic-style == "banner" {
+    tip-banner-box(body)
+  } else {
+    tip-box(body)
+  }
+}
+
+
+#let warning(body) = {
+  if semantic-style == "banner" {
+    warning-banner-box(body)
+  } else {
+    warning-box(body)
+  }
+}
+
+#let resource(url, body) = {
+  if semantic-style == "banner" {
+    resource-banner-box(url, body)
+  } else {
+    resource-box(url, body)
+  }
+}
 
 setup()
 

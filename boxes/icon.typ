@@ -26,3 +26,29 @@
     body,
   )
 }
+
+//------------------------------------------------------------------------------
+
+#let info-banner-box(body) = {
+  banner-box(
+    body,
+    style: colors.info-box,
+    icon: image("../icons/info.svg", width: 42pt),
+  )
+}
+
+#let tip-banner-box(body) = {
+  banner-box(
+    body,
+    style: colors.tip-box,
+    icon: image("../icons/tip.svg", width: 42pt),
+  )
+}
+
+#let warning-banner-box(body) = {
+  banner-box(
+    body,
+    style: colors.warning-box,
+    icon: image("../icons/warning.svg", width: 42pt),
+  )
+}

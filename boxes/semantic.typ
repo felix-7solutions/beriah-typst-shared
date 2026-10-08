@@ -1,4 +1,4 @@
-#import "style.typ": colors
+#import "../style.typ": colors
 
 #let semantic-box(
   style,
@@ -37,5 +37,38 @@
         #icon
       ],
     ),
+  )
+}
+
+#let banner-box(
+  body,
+  style: colors.info-box,
+  icon: image("../icons/info.svg", width: 42pt),
+) = {
+  stack(
+    dir: ttb,
+    // Icon sits in the right border.
+    place(
+      top + right,
+      dx: 42pt + 10pt,
+      dy: 10pt,
+      icon,
+    ),
+    // Box content.
+    box(
+      inset: (
+        top: 14pt,
+        x: 12pt,
+        bottom: 6pt,
+      ),
+      width: 120%,
+      height: 60pt,
+      radius: 12pt,
+      fill:  style.border.transparentize(75%),
+    )[
+      #set text(fill: style.text)
+      #body
+    ],
+
   )
 }
